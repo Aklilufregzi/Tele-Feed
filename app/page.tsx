@@ -23,7 +23,7 @@ const getChannels = async (usernames: string[]) => {
   return channels;
 };
 
-export async function ChannelList() {
+export async function page() {
   const usernames = [
     "tikvahethiopia",
     "freelance_ethio",
@@ -50,4 +50,4 @@ export async function ChannelList() {
   );
 }
 
-export default ChannelList;
+export default page;
