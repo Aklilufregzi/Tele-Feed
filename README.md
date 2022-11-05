@@ -13,3 +13,7 @@ yarn
 ## add your api key to .env as API_KEY
 
 yarn dev
+
+## Deployed on vercel
+
+https://tele-feed-qrbq.vercel.app/
