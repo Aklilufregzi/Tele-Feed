@@ -29,8 +29,10 @@ yarn-error.log*
 .env*.local
 .env
 
+
 # hide .env file
-!.env
+
+
 
 
 # vercel
