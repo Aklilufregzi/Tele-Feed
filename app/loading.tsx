@@ -4,8 +4,8 @@ import styles from "./spin.module.css";
 
 function loading() {
   return [1, 2, 3].map((num) => (
-    <div className="m-32">
-      <div className="bg-white rounded w-full mx-auto rounded-2xl shadow-lg">
+    <div className="md:m-32">
+      <div className="bg-white  w-full mx-auto rounded-2xl shadow-lg">
         <div className="bg-gray-200 h-48 p-3 overflow-hidden animate-pulse"></div>
         <div className="h- p-3">
           <div className="grid grid-cols-3 gap-4 mt-2">

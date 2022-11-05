@@ -20,7 +20,7 @@ function ChannelCard({ title, about, totalMember, username }: any) {
           <img
             alt="Paul Clapton"
             src="broadcast.svg"
-            className="h-16 w-16 rounded-lg object-cover shadow-sm"
+            className="h-12 w-12 rounded-lg object-cover shadow-sm"
           />
         </div>
       </div>

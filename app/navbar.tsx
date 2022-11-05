@@ -64,7 +64,10 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="hover:border-b-slate-300 hover-bordered" href="/">
+        <Link
+          className="hover:border-b-red-300 hover-bordered "
+          href="https://github.com/Aklilufregzi/Tele-Feed"
+        >
           <Image src="/git.svg" alt="" height={30} width={30} />
         </Link>
       </div>

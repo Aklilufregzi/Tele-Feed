@@ -24,10 +24,10 @@ async function MessagesPage({ params }: { params: { username: string } }) {
       <div className="relative md:max-w-4xl">
         {messages.length > 0 ? (
           <div>
-            {messages.map((message: Message) =>
+            {messages.map((message: Message, index) =>
               !message.media ? (
                 <MessageCard
-                  key={message.message}
+                  key={index}
                   message={message.message}
                   link={message.link}
                   views={message.views}

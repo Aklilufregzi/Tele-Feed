@@ -33,16 +33,17 @@ export async function ChannelList() {
     "startupsi",
   ];
   const channels: Channel[] = await getChannels(usernames);
+  console.log(channels[0]);
 
   return (
     <div className="grid md:grid-cols-2 md:m-10 grid-cols-1 space-x-2">
-      {channels.map((channel: Channel) => (
+      {channels.map((channel: Channel, index) => (
         <ChannelCard
           title={channel.title}
           about={channel.about}
           totalMember={channel.totalMember}
           username={channel.username}
-          key="channel.username"
+          key={index}
         />
       ))}
     </div>
