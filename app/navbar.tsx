@@ -5,12 +5,25 @@ import Link from "next/link";
 
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-// get current active page
+
+const ActiveLink = ({ href, name }: any) => {
+  const pathname = usePathname();
+
+  const isCurrentPath = (path: string) => pathname.includes(path);
+
+  return (
+    <Link
+      style={{
+        color: isCurrentPath(href) ? "red" : "white",
+      }}
+      href={href}
+    >
+      {name}
+    </Link>
+  );
+};
 
 function Navbar() {
-  const pathname = usePathname();
-  console.log(pathname);
-
   return (
     <div className="navbar bg-base-200">
       <div className="navbar-start">
@@ -36,30 +49,42 @@ function Navbar() {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link href="jobs">Jobs</Link>
+              <ActiveLink name={"Jobs"} href="/jobs">
+                Jobs
+              </ActiveLink>
             </li>
 
             <li>
-              <Link href="news">News</Link>
+              <ActiveLink name={"News"} href="/news">
+                News
+              </ActiveLink>
             </li>
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost normal-case text-xl">
-          Tele Feed
-        </Link>
+        <ActiveLink
+          href="/"
+          name={"Tele Feed"}
+          className="btn btn-ghost normal-case text-xl"
+        ></ActiveLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="border-md border-slate-200 menu menu-horizontal p-0">
           <li>
-            <Link href="jobs">Jobs</Link>
+            <ActiveLink name={"Jobs"} href="/jobs">
+              Jobs
+            </ActiveLink>
           </li>
 
           <li>
-            <Link href="news">News</Link>
+            <ActiveLink name={"News"} href="/news">
+              News
+            </ActiveLink>
           </li>
 
           <li>
-            <Link href="shopping">Shopping</Link>
+            <ActiveLink name={"Shopping"} href="/shopping">
+              Shopping
+            </ActiveLink>
           </li>
         </ul>
       </div>

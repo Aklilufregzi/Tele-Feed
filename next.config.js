@@ -4,4 +4,8 @@ module.exports = {
   experimental: {
     appDir: true,
   },
+
+  images: {
+    domains: ["cdn4.telegram-cdn.org", "cdn1.telegram-cdn.org"],
+  },
 };

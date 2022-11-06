@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import React from "react";
 import { Channel } from "../../models/channel";
 import ChannelCard from "./../ChannelCard";
@@ -13,17 +14,16 @@ const getChannels = async () => {
   const channels = await Promise.all(
     usernames.map(async (username) => {
       const response = await fetch(
-        `https://fanaprotocol.herokuapp.com/api/v1/channel/get_info?username=@${username}`,
-        {
-          headers: {
-            token: process.env.API_KEY || "",
-          },
-        }
+        `https://fanatgchannelscraper.herokuapp.com/api/v2/get_info/${username}`
       );
 
-      const data = await response.json();
+      if (response.status === 200) {
+        return await response.json();
+      }
 
-      return data;
+      if ([503, 500].includes(response.status)) {
+        return notFound();
+      }
     })
   );
 
@@ -38,9 +38,9 @@ async function Page() {
       {channels.map((channel: Channel) => (
         <ChannelCard
           title={channel.title}
-          about={channel.about}
-          totalMember={channel.totalMember}
+          totalMember={channel.subscriers}
           username={channel.username}
+          profile={channel.profile}
         />
       ))}
     </div>

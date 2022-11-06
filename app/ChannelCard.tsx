@@ -1,9 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import { title } from "process";
 import React from "react";
 import { Channel } from "../models/channel";
 
-function ChannelCard({ title, about, totalMember, username }: any) {
+const removeFirstchar = (str: string) => {
+  return str.substring(1);
+};
+
+function ChannelCard({ title, totalMember, username, profile }: any) {
   return (
     <Link
       href={username || ""}
@@ -17,16 +22,14 @@ function ChannelCard({ title, about, totalMember, username }: any) {
         </div>
 
         <div className="ml-3 hidden flex-shrink-0 sm:block">
-          <img
+          <Image
+            width={40}
+            height={40}
             alt="Paul Clapton"
-            src="broadcast.svg"
+            src={profile || "/broadcast.svg"}
             className="h-12 w-12 rounded-lg object-cover shadow-sm"
           />
         </div>
-      </div>
-
-      <div className="mt-4 sm:pr-8">
-        <p className="text-sm text-gray-500">{about}</p>
       </div>
 
       <dl className="mt-6 flex">

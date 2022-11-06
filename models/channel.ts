@@ -1,9 +1,8 @@
 export interface Channel {
   title: string;
-  about: string;
-  isFake: boolean;
-  isVerified: boolean;
+  profile: string;
+
   username: string;
-  totalMember: number;
-  photoId: string;
+  subscriers: number;
+  photos: number;
 }
