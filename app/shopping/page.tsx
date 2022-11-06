@@ -31,7 +31,7 @@ const getMarket = async () => {
 async function Shopping() {
   const market = await getMarket();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 md:m-10 xs:m-2">
+    <div className="grid grid-cols-1 md:grid-cols-3 md:m-10 xs:m-2 no-underline">
       {market.map((item: any) => (
         <ItemCard
           text={item.description}
