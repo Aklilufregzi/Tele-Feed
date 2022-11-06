@@ -3,9 +3,13 @@ import { Message } from "../../models/message";
 import MessageCard from "../MessageCard";
 
 const getNews = async () => {
-  const response =
-    await fetch(`https://fanatgchannelscraper.herokuapp.com/api/v2/getmultiplechannels_post?channels=ethio_mereja_news&channels=tikvahethiopia
-  `);
+  const response = await fetch(
+    `https://fanatgchannelscraper.herokuapp.com/api/v2/getmultiplechannels_post?channels=ethio_mereja_news&channels=tikvahethiopia
+  `,
+    {
+      cache: "no-store",
+    }
+  );
 
   const data = await response.json();
 
@@ -20,7 +24,12 @@ async function NewsPage() {
     <div>
       <div className="grid md:grid-cols-2 md:m-10 grid-cols-1 space-x-5">
         {news.map((news: any, index: number) => (
-          <MessageCard key={news.id} message={news.text} img={news.img} />
+          <MessageCard
+            key={news.id}
+            message={news.text}
+            img={news.img}
+            showImage={true}
+          />
         ))}
       </div>
     </div>
