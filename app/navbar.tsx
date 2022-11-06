@@ -59,6 +59,11 @@ function Navbar() {
                 News
               </ActiveLink>
             </li>
+            <li>
+              <ActiveLink name={"Shopping"} href="/shopping">
+                Shopping
+              </ActiveLink>
+            </li>
           </ul>
         </div>
         <ActiveLink
