@@ -17,7 +17,11 @@ async function MessagesPage({ params }: { params: { username: string } }) {
     <div className="flex items-center justify-center">
       <div className="relative md:max-w-4xl">
         {messages.map((message: Message, index) => (
-          <MessageCard key={message.id} message={message.text} />
+          <MessageCard
+            showImage={false}
+            key={message.id}
+            message={message.text}
+          />
         ))}
       </div>
     </div>
