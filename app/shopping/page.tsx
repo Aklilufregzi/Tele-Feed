@@ -4,7 +4,10 @@ import ItemCard from "../ItemCard";
 
 const getMarket = async () => {
   const lastPost = await fetch(
-    "https://fanatgchannelscraper.herokuapp.com/api/v2/getlastpost_id/ethio_market_place"
+    "https://fanatgchannelscraper.herokuapp.com/api/v2/getlastpost_id/ethio_market_place",
+    {
+      cache: "no-cache",
+    }
   );
 
   const lastPostId = await lastPost.json();

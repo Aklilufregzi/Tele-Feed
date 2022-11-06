@@ -7,7 +7,7 @@ const getNews = async () => {
     `https://fanatgchannelscraper.herokuapp.com/api/v2/getmultiplechannels_post?channels=ethio_mereja_news&channels=tikvahethiopia
   `,
     {
-      cache: "no-store",
+      cache: "no-cache",
     }
   );
 
